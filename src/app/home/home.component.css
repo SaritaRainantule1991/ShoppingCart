@@ -1,0 +1,33 @@
+.productView {
+    border: 1px solid red;
+    text-align: center;
+    margin: 10px;
+    width:20%
+}
+.productImageStyle{
+    height:50%;
+    width:50%;
+}
+.productName {
+    color: #C4185C;
+    font-size: 14px;
+    margin: 5px;
+}
+
+.addToCartbutton{
+    margin: 10px;
+    height: 25%;
+    background-color: #D4427B;
+}
+
+.cartView{
+    margin:10px
+}
+.cartImageStyle{
+    height:2%;
+    width:2%;
+}
+.cartCount{
+    font-size: 18px;
+    color:#D4427B;
+}

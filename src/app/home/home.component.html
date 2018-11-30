@@ -1,0 +1,30 @@
+<div class='container'>
+  <div class='cartCount' (click)="redirectToCart('checkout')">
+    <img class='cartImageStyle' src='/assets/cart.png' /> {{count}}</div>
+  <div class="row">
+    <div *ngIf="checkout=='product'">
+      <div class="productView" *ngFor="let product of products;let i=index">
+        <img class='productImageStyle' src='/assets/{{product.productImage}}' />
+        <h6 class="productName">{{product.name}}</h6>
+        <h6 class="productName">$ {{product.price}}</h6>
+        <div class="cartView" *ngIf="!product.addedToCart">
+          <button class='btn' (click)="addToCart(i)">Add To Cart</button>
+        </div>
+        <div class="row cartView" *ngIf="product.addedToCart==true">
+          <div class="col-md-4">
+            <button class='btn' (click)="decrement(i)">-</button>
+          </div>
+          <div class="col-md-4">{{(product.count)?product.count:1}} in cart</div>
+          <div class="col-md-4">
+            <button class='btn' (click)="increment(i)">+</button>
+          </div>
+        </div>
+      </div>   
+    </div>
+    <app-cart-product
+     *ngIf="checkout!='product'" 
+     [products]=products
+     (onIncrement)="onIncrementFromCart($event)"
+     (onDecrement)="onDecrementFromCart($event)"
+     ></app-cart-product>
+  </div>

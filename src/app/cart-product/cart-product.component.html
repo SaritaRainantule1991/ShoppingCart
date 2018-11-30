@@ -1,0 +1,39 @@
+<div class="row">
+    <h3>Shopping Cart</h3>
+    <div class="col-xs-12">
+        <h4>You have 7 items in your shopping cart</h4>
+        <a href="#">Clear Shopping Cart</a>
+        <table>
+            <tr>
+                <th></th>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Price</th>
+            </tr>
+            <tr>
+                <div *ngFor="let product of products;let i=index">
+                    <td>
+                        <img class='productImageStyle' src='/assets/{{product.productImage}}' />
+                    </td>
+                    <td>
+                        <h6>{{product.name}}</h6>
+                    </td>
+                    <td>
+                        <div class="row cartView">
+                            <div class="col-md-4">
+                                <button class='btn' (click)="decrement(i)">-</button>
+                            </div>
+                            <div class="col-md-4">{{(product.count)?product.count:1}} in cart</div>
+                            <div class="col-md-4">
+                                <button class='btn' (click)="increment(i)">+</button>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <h6>{{(product.count) ? product.count*product.price:product.price}}</h6>
+                    </td>
+                </div>
+            </tr>
+        </table>
+    </div>
+</div>
