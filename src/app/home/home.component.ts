@@ -20,6 +20,7 @@ export class HomeComponent implements OnInit {
         this.products[i].addedToCart = true;
         this.products[i].count = 1;
         this.count++;
+        this.productAddedToCart.push(this.products[i]);
   }
 
   ngOnInit() {

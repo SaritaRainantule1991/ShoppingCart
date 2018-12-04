@@ -23,7 +23,7 @@
     </div>
     <app-cart-product
      *ngIf="checkout!='product'" 
-     [products]=products
+     [products]=productAddedToCart
      (onIncrement)="onIncrementFromCart($event)"
      (onDecrement)="onDecrementFromCart($event)"
      ></app-cart-product>
